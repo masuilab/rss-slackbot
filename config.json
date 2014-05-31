@@ -1,0 +1,12 @@
+{
+  "interval" : 900,
+  "slack" : {
+    "team" : "masuilab",
+    "channel" : "#news",
+    "header" : ":ramen:"
+  },
+  "feeds" : [
+    "http://shokai.org/blog/feed",
+    "http://github.com/shokai.atom"
+  ]
+}
