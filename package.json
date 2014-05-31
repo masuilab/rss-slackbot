@@ -4,7 +4,7 @@
   "description": "fetch Feeds, post slack.com",
   "main": "rss-slackbot.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "./node_modules/coffee-script/bin/coffee rss-slackbot.coffee"
   },
   "keywords": [
     "rss",
