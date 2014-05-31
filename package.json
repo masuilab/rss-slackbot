@@ -1,7 +1,7 @@
 {
   "name": "rss-slackbot",
   "version": "0.0.0",
-  "description": "fetch Feeds, post slack.com",
+  "description": "fetch Feeds, post Slack.com",
   "main": "rss-slackbot.coffee",
   "scripts": {
     "start" : "./node_modules/coffee-script/bin/coffee rss-slackbot.coffee"
