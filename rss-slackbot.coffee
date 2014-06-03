@@ -19,7 +19,11 @@ notify = (msg, callback) ->
 cache = {}
 
 fetch = (feed_url, callback = ->) ->
-  feed = request(feed_url).pipe(new FeedParser)
+  try
+    feed = request(feed_url).pipe(new FeedParser)
+  catch err
+    callback err
+    return
   entries = []
   feed.on 'error', (err) ->
     callback err
@@ -32,9 +36,9 @@ run = (opts = {}, callback) ->
   async.eachSeries config.feeds, (url, next) ->
     fetch url, (err, entries) ->
       if err
-        setTimeout ->
-          next err
-        , 1000
+        debug JSON.stringify err
+        next()
+        return
       for entry in entries
         do (entry) ->
           debug "fetch - #{JSON.stringify entry}"
@@ -42,20 +46,20 @@ run = (opts = {}, callback) ->
           cache[entry.url] = entry.title
           callback entry unless opts.silent
       setTimeout ->
-        next(err, entries)
+        next()
       , 1000
 
 onNewEntry = (entry) ->
-  console.log "new entry - #{JSON.stringify entry}"
+  debug "new entry - #{JSON.stringify entry}"
   notify "#{entry.title}\n#{entry.url}", (err, res) ->
     if err
       debug "notify error : #{err}"
       return
-    debug res
+    debug res.body
 
 ## Run
 setInterval ->
   run null, onNewEntry 
 , 1000 * config.interval
 
-run {silent: true}, onNewEntry
+run {silent: true}, onNewEntry  # 最初の1回は通知しない
