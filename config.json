@@ -7,7 +7,6 @@
   },
   "feeds" : [
     "http://shokai.org/blog/feed",
-    "http://github.com/shokai.atom",
     "https://github.com/shokai.atom",
     "https://github.com/masui.atom",
     "https://github.com/akiroom.atom",
