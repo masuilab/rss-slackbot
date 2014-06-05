@@ -4,7 +4,8 @@
   "description": "fetch Feeds, post Slack.com",
   "main": "rss-slackbot.coffee",
   "scripts": {
-    "start" : "./node_modules/coffee-script/bin/coffee rss-slackbot.coffee"
+    "test":  "./node_modules/.bin/mocha --compilers coffee:coffee-script/register --reporter spec",
+    "start": "./node_modules/.bin/coffee rss-slackbot.coffee"
   },
   "keywords": [
     "rss",
@@ -20,6 +21,7 @@
     "eventemitter2": "^0.4.13",
     "feedparser": "^0.17.0",
     "lodash": "^2.4.1",
+    "mocha": "^1.20.1",
     "request": "^2.36.0",
     "slackbot": "0.0.1"
   }
