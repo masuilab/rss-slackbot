@@ -4,6 +4,8 @@ fetch Feeds, post Slack.com
 
 - https://github.com/masuilab/rss-slackbot
 
+[![Build Status](https://travis-ci.org/masuilab/rss-slackbot.svg?branch=master)](https://travis-ci.org/masuilab/rss-slackbot)
+
 
 ## Install Dependencies
 

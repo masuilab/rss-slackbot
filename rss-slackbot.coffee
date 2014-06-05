@@ -5,11 +5,11 @@ async = require 'async'
 debug = require('debug')('rssbot')
 Slackbot = require 'slackbot'
 
-console.log config = require path.resolve 'config.json'
-
 unless process.env.SLACK_TOKEN?
   console.error "set ENV variable  e.g. SLACK_TOKEN=a1b2cdef3456"
   process.exit 1
+
+console.log config = require path.resolve 'config.json'
 
 slack = new Slackbot config.slack.team, process.env.SLACK_TOKEN
 
