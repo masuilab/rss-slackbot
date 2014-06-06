@@ -1,6 +1,6 @@
 # RSS Slackbot
 
-fetch Feeds, post Slack.com
+fetch Feeds, post Slack.com. Designed for run with Docker.
 
 - https://github.com/masuilab/rss-slackbot
 
@@ -17,3 +17,7 @@ fetch Feeds, post Slack.com
     % export SLACK_TOKEN=a1b2cdef345
     % DEBUG=rssbot npm start
 
+
+## Test
+
+    % npm test
